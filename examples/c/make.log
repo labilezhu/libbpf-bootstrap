@@ -1,0 +1,780 @@
+make clean && reset && make SHELL="/bin/bash -x" --debug=bvi 2>&1 | tee -a make.log
+
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
++ sed 's/mips.*/mips/'
++ sed s/x86_64/x86/
++ sed s/aarch64/arm64/
++ sed s/ppc64le/powerpc/
++ uname -m
++ which cargo
+Updating makefiles....
+Updating goal targets....
+ File 'all' does not exist.
+  File 'minimal' does not exist.
+   File '.output/minimal.o' does not exist.
+    File '.output' does not exist.
+   Must remake target '.output'.
++ printf '  %-8s %s%s\n' MKDIR .output ''
+  MKDIR    .output
++ mkdir -p .output
+   Successfully remade target file '.output'.
+    File '.output/minimal.skel.h' does not exist.
+     File '.output/minimal.bpf.o' does not exist.
+      File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a' does not exist.
+       File '.output/libbpf' does not exist.
+      Must remake target '.output/libbpf'.
++ printf '  %-8s %s%s\n' MKDIR .output/libbpf ''
+  MKDIR    .output/libbpf
++ mkdir -p .output/libbpf
+      Successfully remade target file '.output/libbpf'.
+     Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a'.
++ printf '  %-8s %s%s\n' LIB libbpf.a ''
+  LIB      libbpf.a
++ make -C /home/labile/opensource/libbpf-bootstrap/libbpf/src BUILD_STATIC_ONLY=1 OBJDIR=/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf DESTDIR=/home/labile/opensource/libbpf-bootstrap/examples/c/.output/ INCLUDEDIR= LIBDIR= UAPIDIR= install
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
++ head -n1
++ sort -rV
++ grep -oE '^LIBBPF_([0-9.]+)' libbpf.map
++ cut -d_ -f2
++ pkg-config --cflags libelf zlib
++ cc -dumpmachine
++ which etags
+Updating makefiles....
+Updating goal targets....
+ File 'install' does not exist.
+   File 'all' does not exist.
+     File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a' does not exist.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o' does not exist.
+         File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs' does not exist.
+        Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs'.
++ printf '  %-8s %s%s\n' MKDIR /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs ''
+  MKDIR    /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs
++ mkdir -p /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs
+        Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs'.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c bpf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c btf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c libbpf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c libbpf_errno.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c netlink.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c nlattr.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c str_error.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c libbpf_probes.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c bpf_prog_linfo.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c btf_dump.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c hashmap.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c ringbuf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c strset.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c linker.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c gen_loader.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c relo_core.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o'.
+       File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o' does not exist.
+      Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o
++ cc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c usdt.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o
+      Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o'.
+    Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a'.
++ printf '  %-8s %s%s\n' AR /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a ''
+  AR       /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a
++ ar rcs /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_errno.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/netlink.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/nlattr.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/str_error.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/libbpf_probes.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/bpf_prog_linfo.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/btf_dump.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/hashmap.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/ringbuf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/strset.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/linker.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/gen_loader.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/relo_core.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/staticobjs/usdt.o
+    Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a'.
+     File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.pc' does not exist.
+       File 'force' does not exist.
+      Must remake target 'force'.
+      Successfully remade target file 'force'.
+    Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.pc'.
++ sed -e 's|@PREFIX@|/usr|' -e 's|@LIBDIR@|$\{prefix\}/lib64|' -e 's|@VERSION@|1.1.0|'
+    Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.pc'.
+  Must remake target 'all'.
+  Successfully remade target file 'all'.
+   File 'install_headers' does not exist.
+  Must remake target 'install_headers'.
++ printf '  %-8s %s%s\n' INSTALL 'bpf.h libbpf.h btf.h libbpf_common.h libbpf_legacy.h bpf_helpers.h bpf_helper_defs.h bpf_tracing.h bpf_endian.h bpf_core_read.h skel_internal.h libbpf_version.h usdt.bpf.h' ''
+  INSTALL  bpf.h libbpf.h btf.h libbpf_common.h libbpf_legacy.h bpf_helpers.h bpf_helper_defs.h bpf_tracing.h bpf_endian.h bpf_core_read.h skel_internal.h libbpf_version.h usdt.bpf.h
++ '[' '!' -d /home/labile/opensource/libbpf-bootstrap/examples/c/.output//bpf ']'
++ install -d -m 755 /home/labile/opensource/libbpf-bootstrap/examples/c/.output//bpf
++ install -m 644 bpf.h libbpf.h btf.h libbpf_common.h libbpf_legacy.h bpf_helpers.h bpf_helper_defs.h bpf_tracing.h bpf_endian.h bpf_core_read.h skel_internal.h libbpf_version.h usdt.bpf.h /home/labile/opensource/libbpf-bootstrap/examples/c/.output//bpf
+  Successfully remade target file 'install_headers'.
+   File 'install_pkgconfig' does not exist.
+  Must remake target 'install_pkgconfig'.
++ printf '  %-8s %s%s\n' INSTALL /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.pc ''
+  INSTALL  /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.pc
++ '[' '!' -d /home/labile/opensource/libbpf-bootstrap/examples/c/.output//pkgconfig ']'
++ install -d -m 755 /home/labile/opensource/libbpf-bootstrap/examples/c/.output//pkgconfig
++ install -m 644 /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.pc /home/labile/opensource/libbpf-bootstrap/examples/c/.output//pkgconfig
+  Successfully remade target file 'install_pkgconfig'.
+Must remake target 'install'.
++ printf '  %-8s %s%s\n' INSTALL '/home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a ' ''
+  INSTALL  /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a 
++ '[' '!' -d /home/labile/opensource/libbpf-bootstrap/examples/c/.output/ ']'
++ cp -fR /home/labile/opensource/libbpf-bootstrap/examples/c/.output//libbpf/libbpf.a /home/labile/opensource/libbpf-bootstrap/examples/c/.output/
+Successfully remade target file 'install'.
+     Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a'.
+    Must remake target '.output/minimal.bpf.o'.
++ sed 's/mips.*/mips/'
++ sed s/ppc64le/powerpc/
++ sed s/aarch64/arm64/
++ uname -m
++ sed s/x86_64/x86/
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ clang -v -E -
++ printf '  %-8s %s%s\n' BPF .output/minimal.bpf.o ''
+  BPF      .output/minimal.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c minimal.bpf.c -o .output/minimal.bpf.o
++ llvm-strip -g .output/minimal.bpf.o
+    Successfully remade target file '.output/minimal.bpf.o'.
+     File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool' does not exist.
+      File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool' does not exist.
+     Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool'.
++ printf '  %-8s %s%s\n' MKDIR bpftool ''
+  MKDIR    bpftool
++ mkdir -p /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool
+     Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool'.
+    Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool'.
++ printf '  %-8s %s%s\n' BPFTOOL bpftool/bootstrap/bpftool ''
+  BPFTOOL  bpftool/bootstrap/bpftool
++ make ARCH= CROSS_COMPILE= OUTPUT=/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -C /home/labile/opensource/libbpf-bootstrap/bpftool/src bootstrap
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
++ '[' -d /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -a -x /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ ']'
++ echo 1
++ grep -q BTF_KIND_VAR
++ clang -g -target bpf -S -o - -x c -
++ printf '%s\n' 'struct s { int i; } __attribute__((preserve_access_index)); struct s foo;'
++ echo 1
++ cc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -Wall -Werror -x c - -lbfd -ldl -S -o -
++ printf '%b\n' '#include <bfd.h>\n' 'int main(void) {' '	bfd_demangle(0, 0, 0);' '	return 0;' '}'
++ cc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -Wall -Werror -x c - -lbfd -ldl -liberty -S -o -
++ printf '%b\n' '#include <bfd.h>\n' 'int main(void) {' '	bfd_demangle(0, 0, 0);' '	return 0;' '}'
++ cc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -Wall -Werror -x c - -lbfd -ldl -liberty -lz -S -o -
++ printf '%b\n' '#include <bfd.h>\n' 'int main(void) {' '	bfd_demangle(0, 0, 0);' '	return 0;' '}'
++ cc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -Wall -Werror -x c - -lbfd -lopcodes -S -o -
++ printf '%b\n' '#include <dis-asm.h>\n' 'int main(void) {' '	disassembler((enum bfd_architecture)0, 0, 0, NULL);' '	return 0;' '}'
++ cc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -Wall -Werror -x c - -lz -S -o -
++ printf '%b\n' '#include <zlib.h>\n' 'int main(void) {' '	gzopen(NULL, "r");' '	return 0;' '}'
++ echo 1
++ printf '%b\n' '#include <sys/capability.h>\n' 'int main(void) {' '	cap_free(0);' '	return 0;' '}'
++ cc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -Wall -Werror -x c - -lcap -S -o -
++ printf '...%30s: [ \033[32mon\033[m  ]' libbfd
++ printf '...%30s: [ \033[31mOFF\033[m ]' libbfd
+...                        libbfd: [ [31mOFF[m ]
++ printf '...%30s: [ \033[32mon\033[m  ]' disassembler-four-args
++ printf '...%30s: [ \033[31mOFF\033[m ]' disassembler-four-args
+...        disassembler-four-args: [ [31mOFF[m ]
++ printf '...%30s: [ \033[32mon\033[m  ]' zlib
++ printf '...%30s: [ \033[31mOFF\033[m ]' zlib
+...                          zlib: [ [32mon[m  ]
++ printf '...%30s: [ \033[32mon\033[m  ]' libcap
++ printf '...%30s: [ \033[31mOFF\033[m ]' libcap
+...                        libcap: [ [31mOFF[m ]
++ printf '...%30s: [ \033[32mon\033[m  ]' clang-bpf-co-re
++ printf '...%30s: [ \033[31mOFF\033[m ]' clang-bpf-co-re
+...               clang-bpf-co-re: [ [32mon[m  ]
++ uname -r
++ uname -r
+Updating makefiles....
+Updating goal targets....
+ File 'bootstrap' does not exist.
+  File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool' does not exist.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o' does not exist.
+    File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/hashmap.h' does not exist.
+     File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf' does not exist.
+    Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf'.
++ printf '  %-9s%s\n' MKDIR /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf
+  MKDIR    /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf
++ mkdir -p /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf
+    Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf'.
+   Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/hashmap.h'.
++ printf '  %-9s%s\n' INSTALL /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/hashmap.h
+  INSTALL  /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/hashmap.h
++ install -m 644 -t /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf /home/labile/opensource/libbpf-bootstrap/bpftool/libbpf/src/hashmap.h
+   Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/hashmap.h'.
+    File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/relo_core.h' does not exist.
+   Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/relo_core.h'.
++ printf '  %-9s%s\n' INSTALL /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/relo_core.h
+  INSTALL  /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/relo_core.h
++ install -m 644 -t /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf /home/labile/opensource/libbpf-bootstrap/bpftool/libbpf/src/relo_core.h
+   Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/relo_core.h'.
+    File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/libbpf_internal.h' does not exist.
+   Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/libbpf_internal.h'.
++ printf '  %-9s%s\n' INSTALL /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/libbpf_internal.h
+  INSTALL  /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/libbpf_internal.h
++ install -m 644 -t /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf /home/labile/opensource/libbpf-bootstrap/bpftool/libbpf/src/libbpf_internal.h
+   Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf/libbpf_internal.h'.
+    File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/' does not exist.
+   Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/'.
++ printf '  %-9s%s\n' MKDIR /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/
+  MKDIR    /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/
++ mkdir -p /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/
+   Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/'.
+    File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a' does not exist.
+     File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/' does not exist.
+    Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/'.
++ printf '  %-9s%s\n' MKDIR /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/
+  MKDIR    /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/
++ mkdir -p /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/
+    Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/'.
+   Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a'.
++ make -C /home/labile/opensource/libbpf-bootstrap/bpftool/libbpf/src OBJDIR=/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf PREFIX=/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf ARCH= CROSS_COMPILE= CC=gcc LD=ld AR=ar /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a install_headers
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Reading makefiles...
++ head -n1
++ sort -rV
++ grep -oE '^LIBBPF_([0-9.]+)' libbpf.map
++ cut -d_ -f2
++ pkg-config --cflags libelf zlib
++ uname -m
++ which etags
+Updating makefiles....
+Updating goal targets....
+ File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a' does not exist.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o' does not exist.
+     File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs' does not exist.
+    Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs'.
++ printf '  %-8s %s%s\n' MKDIR /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs ''
+  MKDIR    /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs
++ mkdir -p /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs
+    Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs'.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c bpf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c btf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c libbpf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c libbpf_errno.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c netlink.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c nlattr.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c str_error.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c libbpf_probes.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c bpf_prog_linfo.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c btf_dump.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c hashmap.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c ringbuf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c strset.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c linker.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c gen_loader.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c relo_core.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o'.
++ printf '  %-8s %s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o ''
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o
++ gcc -I. -I../include -I../include/uapi -g -O2 -Werror -Wall -std=gnu89 -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -c usdt.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o'.
+Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a'.
++ printf '  %-8s %s%s\n' AR /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a ''
+  AR       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a
++ ar rcs /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_errno.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/netlink.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/nlattr.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/str_error.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/libbpf_probes.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/bpf_prog_linfo.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/btf_dump.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/hashmap.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/ringbuf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/strset.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/linker.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/gen_loader.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/relo_core.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/staticobjs/usdt.o
+Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a'.
+ File 'install_headers' does not exist.
+Must remake target 'install_headers'.
++ printf '  %-8s %s%s\n' INSTALL 'bpf.h libbpf.h btf.h libbpf_common.h libbpf_legacy.h bpf_helpers.h bpf_helper_defs.h bpf_tracing.h bpf_endian.h bpf_core_read.h skel_internal.h libbpf_version.h usdt.bpf.h' ''
+  INSTALL  bpf.h libbpf.h btf.h libbpf_common.h libbpf_legacy.h bpf_helpers.h bpf_helper_defs.h bpf_tracing.h bpf_endian.h bpf_core_read.h skel_internal.h libbpf_version.h usdt.bpf.h
++ '[' '!' -d /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf ']'
++ install -m 644 bpf.h libbpf.h btf.h libbpf_common.h libbpf_legacy.h bpf_helpers.h bpf_helper_defs.h bpf_tracing.h bpf_endian.h bpf_core_read.h skel_internal.h libbpf_version.h usdt.bpf.h /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include/bpf
+Successfully remade target file 'install_headers'.
+   Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a'.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD main.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD common.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD json_writer.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD gen.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD btf.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD xlated_dumper.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD btf_dumper.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o'.
+   File '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o' does not exist.
+  Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o'.
++ printf '  %-9s%s\n' CC /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o
+  CC       /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi -c -MMD /home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/disasm.c -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o
+  Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o'.
+ Must remake target '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool'.
++ printf '  %-9s%s\n' LINK /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool
+  LINK     /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool
++ gcc -O2 -W -Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wbad-function-cast -Wdeclaration-after-statement -Wformat-security -Wformat-y2k -Winit-self -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -Wpacked -Wredundant-decls -Wshadow -Wstrict-prototypes -Wswitch-default -Wundef -Wwrite-strings '-DPACKAGE="bpftool"' -D__EXPORTED_HEADERS__ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/ -I/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/src/kernel/bpf/ -I/home/labile/opensource/libbpf-bootstrap/bpftool/include -I/home/labile/opensource/libbpf-bootstrap/bpftool/include/uapi /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/main.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/common.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/json_writer.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/gen.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/xlated_dumper.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/btf_dumper.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/disasm.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/libbpf/libbpf.a -lelf -lz -o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool
+ Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool'.
+Must remake target 'bootstrap'.
+Successfully remade target file 'bootstrap'.
+    Successfully remade target file '/home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool'.
+   Must remake target '.output/minimal.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/minimal.skel.h ''
+  GEN-SKEL .output/minimal.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/minimal.bpf.o
+   Successfully remade target file '.output/minimal.skel.h'.
+  Must remake target '.output/minimal.o'.
++ printf '  %-8s %s%s\n' CC .output/minimal.o ''
+  CC       .output/minimal.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c minimal.c -o .output/minimal.o
+  Successfully remade target file '.output/minimal.o'.
+ Must remake target 'minimal'.
++ printf '  %-8s %s%s\n' BINARY minimal ''
+  BINARY   minimal
++ cc -g -Wall .output/minimal.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o minimal
+ Successfully remade target file 'minimal'.
+  File 'minimal_legacy' does not exist.
+   File '.output/minimal_legacy.o' does not exist.
+    File '.output/minimal_legacy.skel.h' does not exist.
+     File '.output/minimal_legacy.bpf.o' does not exist.
+    Must remake target '.output/minimal_legacy.bpf.o'.
++ sed s/ppc64le/powerpc/
++ sed s/aarch64/arm64/
++ sed 's/mips.*/mips/'
++ sed s/x86_64/x86/
++ uname -m
++ clang -v -E -
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ printf '  %-8s %s%s\n' BPF .output/minimal_legacy.bpf.o ''
+  BPF      .output/minimal_legacy.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c minimal_legacy.bpf.c -o .output/minimal_legacy.bpf.o
++ llvm-strip -g .output/minimal_legacy.bpf.o
+    Successfully remade target file '.output/minimal_legacy.bpf.o'.
+   Must remake target '.output/minimal_legacy.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/minimal_legacy.skel.h ''
+  GEN-SKEL .output/minimal_legacy.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/minimal_legacy.bpf.o
+   Successfully remade target file '.output/minimal_legacy.skel.h'.
+  Must remake target '.output/minimal_legacy.o'.
++ printf '  %-8s %s%s\n' CC .output/minimal_legacy.o ''
+  CC       .output/minimal_legacy.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c minimal_legacy.c -o .output/minimal_legacy.o
+  Successfully remade target file '.output/minimal_legacy.o'.
+ Must remake target 'minimal_legacy'.
++ printf '  %-8s %s%s\n' BINARY minimal_legacy ''
+  BINARY   minimal_legacy
++ cc -g -Wall .output/minimal_legacy.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o minimal_legacy
+ Successfully remade target file 'minimal_legacy'.
+  File 'bootstrap' does not exist.
+   File '.output/bootstrap.o' does not exist.
+    File '.output/bootstrap.skel.h' does not exist.
+     File '.output/bootstrap.bpf.o' does not exist.
+    Must remake target '.output/bootstrap.bpf.o'.
++ sed s/ppc64le/powerpc/
++ sed 's/mips.*/mips/'
++ sed s/aarch64/arm64/
++ sed s/x86_64/x86/
++ uname -m
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ clang -v -E -
++ printf '  %-8s %s%s\n' BPF .output/bootstrap.bpf.o ''
+  BPF      .output/bootstrap.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c bootstrap.bpf.c -o .output/bootstrap.bpf.o
++ llvm-strip -g .output/bootstrap.bpf.o
+    Successfully remade target file '.output/bootstrap.bpf.o'.
+   Must remake target '.output/bootstrap.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/bootstrap.skel.h ''
+  GEN-SKEL .output/bootstrap.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/bootstrap.bpf.o
+   Successfully remade target file '.output/bootstrap.skel.h'.
+  Must remake target '.output/bootstrap.o'.
++ printf '  %-8s %s%s\n' CC .output/bootstrap.o ''
+  CC       .output/bootstrap.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c bootstrap.c -o .output/bootstrap.o
+  Successfully remade target file '.output/bootstrap.o'.
+ Must remake target 'bootstrap'.
++ printf '  %-8s %s%s\n' BINARY bootstrap ''
+  BINARY   bootstrap
++ cc -g -Wall .output/bootstrap.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o bootstrap
+ Successfully remade target file 'bootstrap'.
+  File 'uprobe' does not exist.
+   File '.output/uprobe.o' does not exist.
+    File '.output/uprobe.skel.h' does not exist.
+     File '.output/uprobe.bpf.o' does not exist.
+    Must remake target '.output/uprobe.bpf.o'.
++ sed s/x86_64/x86/
++ sed s/aarch64/arm64/
++ sed s/ppc64le/powerpc/
++ sed 's/mips.*/mips/'
++ uname -m
++ clang -v -E -
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ printf '  %-8s %s%s\n' BPF .output/uprobe.bpf.o ''
+  BPF      .output/uprobe.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c uprobe.bpf.c -o .output/uprobe.bpf.o
++ llvm-strip -g .output/uprobe.bpf.o
+    Successfully remade target file '.output/uprobe.bpf.o'.
+   Must remake target '.output/uprobe.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/uprobe.skel.h ''
+  GEN-SKEL .output/uprobe.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/uprobe.bpf.o
+   Successfully remade target file '.output/uprobe.skel.h'.
+  Must remake target '.output/uprobe.o'.
++ printf '  %-8s %s%s\n' CC .output/uprobe.o ''
+  CC       .output/uprobe.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c uprobe.c -o .output/uprobe.o
+  Successfully remade target file '.output/uprobe.o'.
+ Must remake target 'uprobe'.
++ printf '  %-8s %s%s\n' BINARY uprobe ''
+  BINARY   uprobe
++ cc -g -Wall .output/uprobe.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o uprobe
+ Successfully remade target file 'uprobe'.
+  File 'kprobe' does not exist.
+   File '.output/kprobe.o' does not exist.
+    File '.output/kprobe.skel.h' does not exist.
+     File '.output/kprobe.bpf.o' does not exist.
+    Must remake target '.output/kprobe.bpf.o'.
++ sed 's/mips.*/mips/'
++ sed s/ppc64le/powerpc/
++ sed s/x86_64/x86/
++ uname -m
++ sed s/aarch64/arm64/
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ clang -v -E -
++ printf '  %-8s %s%s\n' BPF .output/kprobe.bpf.o ''
+  BPF      .output/kprobe.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c kprobe.bpf.c -o .output/kprobe.bpf.o
++ llvm-strip -g .output/kprobe.bpf.o
+    Successfully remade target file '.output/kprobe.bpf.o'.
+   Must remake target '.output/kprobe.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/kprobe.skel.h ''
+  GEN-SKEL .output/kprobe.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/kprobe.bpf.o
+   Successfully remade target file '.output/kprobe.skel.h'.
+  Must remake target '.output/kprobe.o'.
++ printf '  %-8s %s%s\n' CC .output/kprobe.o ''
+  CC       .output/kprobe.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c kprobe.c -o .output/kprobe.o
+  Successfully remade target file '.output/kprobe.o'.
+ Must remake target 'kprobe'.
++ printf '  %-8s %s%s\n' BINARY kprobe ''
+  BINARY   kprobe
++ cc -g -Wall .output/kprobe.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o kprobe
+ Successfully remade target file 'kprobe'.
+  File 'fentry' does not exist.
+   File '.output/fentry.o' does not exist.
+    File '.output/fentry.skel.h' does not exist.
+     File '.output/fentry.bpf.o' does not exist.
+    Must remake target '.output/fentry.bpf.o'.
++ sed 's/mips.*/mips/'
++ sed s/ppc64le/powerpc/
++ sed s/aarch64/arm64/
++ sed s/x86_64/x86/
++ uname -m
++ clang -v -E -
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ printf '  %-8s %s%s\n' BPF .output/fentry.bpf.o ''
+  BPF      .output/fentry.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c fentry.bpf.c -o .output/fentry.bpf.o
++ llvm-strip -g .output/fentry.bpf.o
+    Successfully remade target file '.output/fentry.bpf.o'.
+   Must remake target '.output/fentry.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/fentry.skel.h ''
+  GEN-SKEL .output/fentry.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/fentry.bpf.o
+   Successfully remade target file '.output/fentry.skel.h'.
+  Must remake target '.output/fentry.o'.
++ printf '  %-8s %s%s\n' CC .output/fentry.o ''
+  CC       .output/fentry.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c fentry.c -o .output/fentry.o
+  Successfully remade target file '.output/fentry.o'.
+ Must remake target 'fentry'.
++ printf '  %-8s %s%s\n' BINARY fentry ''
+  BINARY   fentry
++ cc -g -Wall .output/fentry.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o fentry
+ Successfully remade target file 'fentry'.
+  File 'usdt' does not exist.
+   File '.output/usdt.o' does not exist.
+    File '.output/usdt.skel.h' does not exist.
+     File '.output/usdt.bpf.o' does not exist.
+    Must remake target '.output/usdt.bpf.o'.
++ sed 's/mips.*/mips/'
++ sed s/ppc64le/powerpc/
++ uname -m
++ sed s/x86_64/x86/
++ sed s/aarch64/arm64/
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ clang -v -E -
++ printf '  %-8s %s%s\n' BPF .output/usdt.bpf.o ''
+  BPF      .output/usdt.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c usdt.bpf.c -o .output/usdt.bpf.o
++ llvm-strip -g .output/usdt.bpf.o
+    Successfully remade target file '.output/usdt.bpf.o'.
+   Must remake target '.output/usdt.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/usdt.skel.h ''
+  GEN-SKEL .output/usdt.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/usdt.bpf.o
+   Successfully remade target file '.output/usdt.skel.h'.
+  Must remake target '.output/usdt.o'.
++ printf '  %-8s %s%s\n' CC .output/usdt.o ''
+  CC       .output/usdt.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c usdt.c -o .output/usdt.o
+  Successfully remade target file '.output/usdt.o'.
+ Must remake target 'usdt'.
++ printf '  %-8s %s%s\n' BINARY usdt ''
+  BINARY   usdt
++ cc -g -Wall .output/usdt.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o usdt
+ Successfully remade target file 'usdt'.
+  File 'sockfilter' does not exist.
+   File '.output/sockfilter.o' does not exist.
+    File '.output/sockfilter.skel.h' does not exist.
+     File '.output/sockfilter.bpf.o' does not exist.
+    Must remake target '.output/sockfilter.bpf.o'.
++ sed 's/mips.*/mips/'
++ sed s/ppc64le/powerpc/
++ sed s/aarch64/arm64/
++ sed s/x86_64/x86/
++ uname -m
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ clang -v -E -
++ printf '  %-8s %s%s\n' BPF .output/sockfilter.bpf.o ''
+  BPF      .output/sockfilter.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c sockfilter.bpf.c -o .output/sockfilter.bpf.o
++ llvm-strip -g .output/sockfilter.bpf.o
+    Successfully remade target file '.output/sockfilter.bpf.o'.
+   Must remake target '.output/sockfilter.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/sockfilter.skel.h ''
+  GEN-SKEL .output/sockfilter.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/sockfilter.bpf.o
+   Successfully remade target file '.output/sockfilter.skel.h'.
+  Must remake target '.output/sockfilter.o'.
++ printf '  %-8s %s%s\n' CC .output/sockfilter.o ''
+  CC       .output/sockfilter.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c sockfilter.c -o .output/sockfilter.o
+  Successfully remade target file '.output/sockfilter.o'.
+ Must remake target 'sockfilter'.
++ printf '  %-8s %s%s\n' BINARY sockfilter ''
+  BINARY   sockfilter
++ cc -g -Wall .output/sockfilter.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o sockfilter
+ Successfully remade target file 'sockfilter'.
+  File 'tc' does not exist.
+   File '.output/tc.o' does not exist.
+    File '.output/tc.skel.h' does not exist.
+     File '.output/tc.bpf.o' does not exist.
+    Must remake target '.output/tc.bpf.o'.
++ sed 's/mips.*/mips/'
++ uname -m
++ sed s/aarch64/arm64/
++ sed s/ppc64le/powerpc/
++ sed s/x86_64/x86/
++ clang -v -E -
++ sed -n '/<...> search starts here:/,/End of search list./{ s| \(/.*\)|-idirafter \1|p }'
++ printf '  %-8s %s%s\n' BPF .output/tc.bpf.o ''
+  BPF      .output/tc.bpf.o
++ clang -g -O2 -target bpf -D__TARGET_ARCH_x86 -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -idirafter /usr/lib/llvm-14/lib/clang/14.0.0/include -idirafter /usr/local/include -idirafter /usr/include/x86_64-linux-gnu -idirafter /usr/include -c tc.bpf.c -o .output/tc.bpf.o
++ llvm-strip -g .output/tc.bpf.o
+    Successfully remade target file '.output/tc.bpf.o'.
+   Must remake target '.output/tc.skel.h'.
++ printf '  %-8s %s%s\n' GEN-SKEL .output/tc.skel.h ''
+  GEN-SKEL .output/tc.skel.h
++ /home/labile/opensource/libbpf-bootstrap/examples/c/.output/bpftool/bootstrap/bpftool gen skeleton .output/tc.bpf.o
+   Successfully remade target file '.output/tc.skel.h'.
+  Must remake target '.output/tc.o'.
++ printf '  %-8s %s%s\n' CC .output/tc.o ''
+  CC       .output/tc.o
++ cc -g -Wall -I.output -I../../libbpf/include/uapi -I../../vmlinux/x86/ -c tc.c -o .output/tc.o
+  Successfully remade target file '.output/tc.o'.
+ Must remake target 'tc'.
++ printf '  %-8s %s%s\n' BINARY tc ''
+  BINARY   tc
++ cc -g -Wall .output/tc.o /home/labile/opensource/libbpf-bootstrap/examples/c/.output/libbpf.a -lelf -lz -o tc
+ Successfully remade target file 'tc'.
+Must remake target 'all'.
+Successfully remade target file 'all'.
