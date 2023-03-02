@@ -80,3 +80,71 @@ sudo pmap -XX  `pgrep minimal`
 bpf_object_skeleton->data 
 0x555555585040
 ```
+
+## bpf ELF
+
+```log
+readelf -aW /home/labile/opensource/libbpf-bootstrap/examples/c/.output/minimal.bpf.o
+
+Section Headers:
+  [Nr] Name              Type            Address          Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            0000000000000000 000000 000000 00      0   0  0
+  [ 1] .strtab           STRTAB          0000000000000000 00055b 0000a2 00      0   0  1
+  [ 2] .text             PROGBITS        0000000000000000 000040 000000 00  AX  0   0  4
+  [ 3] tp/syscalls/sys_enter_write PROGBITS        0000000000000000 000040 000068 00  AX  0   0  8
+  [ 4] .reltp/syscalls/sys_enter_write REL             0000000000000000 000498 000020 10   I 13   3  8
+  [ 5] license           PROGBITS        0000000000000000 0000a8 00000d 00  WA  0   0  1
+  [ 6] .bss              NOBITS          0000000000000000 0000b8 000004 00  WA  0   0  4
+  [ 7] .rodata           PROGBITS        0000000000000000 0000b8 00001c 00   A  0   0  1
+  [ 8] .BTF              PROGBITS        0000000000000000 0000d4 00025d 00      0   0  4
+  [ 9] .rel.BTF          REL             0000000000000000 0004b8 000030 10   I 13   8  8
+  [10] .BTF.ext          PROGBITS        0000000000000000 000334 0000a0 00      0   0  4
+  [11] .rel.BTF.ext      REL             0000000000000000 0004e8 000070 10   I 13  10  8
+  [12] .llvm_addrsig     LOOS+0xfff4c03  0000000000000000 000558 000003 00   E  0   0  1
+  [13] .symtab           SYMTAB          0000000000000000 0003d8 0000c0 18      1   5  8
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  D (mbind), p (processor specific)
+
+There are no section groups in this file.
+
+There are no program headers in this file.
+
+There is no dynamic section in this file.
+
+Relocation section '.reltp/syscalls/sys_enter_write' at offset 0x498 contains 2 entries:
+    Offset             Info             Type               Symbol's Value  Symbol's Name
+0000000000000010  0000000600000001 R_BPF_INSN_64          0000000000000000 my_pid
+0000000000000030  0000000400000001 R_BPF_INSN_64          0000000000000000 .rodata
+
+Relocation section '.rel.BTF' at offset 0x4b8 contains 3 entries:
+    Offset             Info             Type               Symbol's Value  Symbol's Name
+00000000000000f0  0000000600000004 R_BPF_INSN_DISP16      0000000000000000 my_pid
+0000000000000108  0000000400000003 R_BPF_INSN_16          0000000000000000 .rodata
+0000000000000120  0000000700000004 R_BPF_INSN_DISP16      0000000000000000 LICENSE
+
+Relocation section '.rel.BTF.ext' at offset 0x4e8 contains 7 entries:
+    Offset             Info             Type               Symbol's Value  Symbol's Name
+000000000000002c  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+0000000000000040  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+0000000000000050  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+0000000000000060  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+0000000000000070  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+0000000000000080  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+0000000000000090  0000000100000004 R_BPF_INSN_DISP16      0000000000000000 tp/syscalls/sys_enter_write
+
+The decoding of unwind sections for machine type Linux BPF is not currently supported.
+
+Symbol table '.symtab' contains 8 entries:
+   Num:    Value          Size Type    Bind   Vis      Ndx Name
+     0: 0000000000000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 0000000000000000     0 SECTION LOCAL  DEFAULT    3 tp/syscalls/sys_enter_write
+     2: 0000000000000058     0 NOTYPE  LOCAL  DEFAULT    3 LBB0_2
+     3: 0000000000000000    28 OBJECT  LOCAL  DEFAULT    7 handle_tp.____fmt
+     4: 0000000000000000     0 SECTION LOCAL  DEFAULT    7 .rodata
+     5: 0000000000000000   104 FUNC    GLOBAL DEFAULT    3 handle_tp
+     6: 0000000000000000     4 OBJECT  GLOBAL DEFAULT    6 my_pid
+     7: 0000000000000000    13 OBJECT  GLOBAL DEFAULT    5 LICENSE
+```
