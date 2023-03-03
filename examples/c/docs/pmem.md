@@ -148,3 +148,40 @@ Symbol table '.symtab' contains 8 entries:
      6: 0000000000000000     4 OBJECT  GLOBAL DEFAULT    6 my_pid
      7: 0000000000000000    13 OBJECT  GLOBAL DEFAULT    5 LICENSE
 ```
+
+### bpf mmap
+
+#### SEC_BSS
+```
+map->mmaped
+0x7ffff7ffa000
+
+skel->bss
+0x7ffff7ffa000
+
+```
+
+```c
+// bpf_attr attr
+// attr.map_name = "minimal_.bss"
+// attr.map_type = BPF_MAP_TYPE_ARRAY
+
+bpf_object__populate_internal_map():
+  bpf_map_update_elem(fd:map->fd, key:&zero, value:map->mmaped(0x7ffff7ffa000), flags:0);
+```
+
+
+### SEC_RODATA
+```
+map->mmaped
+0x7ffff7fba000
+```
+
+```c
+// bpf_attr attr
+// attr.map_name = "minimal_.rodata"
+// attr.map_type = BPF_MAP_TYPE_ARRAY
+
+bpf_object__populate_internal_map():
+  bpf_map_update_elem(fd:map->fd, key:&zero, value:map->mmaped(0x7ffff7fba000), flags:0);
+```
