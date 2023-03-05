@@ -23,6 +23,8 @@ labile      5875    5835  0 09:42 ?        00:00:00  |   |               \_ /hom
 
 Breakpoint on syscall:
 ```log
--exec catch syscall
 -exec catch syscall mmap
+-exec catch syscall write
+-exec catch syscall bpf
+-exec catch syscall 321
 ```

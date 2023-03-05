@@ -1,4 +1,4 @@
-
+## App ELF
 
 ```bash
 #disable ASLR
@@ -144,7 +144,7 @@ Symbol table '.symtab' contains 8 entries:
      2: 0000000000000058     0 NOTYPE  LOCAL  DEFAULT    3 LBB0_2
      3: 0000000000000000    28 OBJECT  LOCAL  DEFAULT    7 handle_tp.____fmt
      4: 0000000000000000     0 SECTION LOCAL  DEFAULT    7 .rodata
-     5: 0000000000000000   104 FUNC    GLOBAL DEFAULT    3 handle_tp
+     5: 0000000000000000   104 FUNC    GLOBAL DEFAULT    3 handle_tp <---
      6: 0000000000000000     4 OBJECT  GLOBAL DEFAULT    6 my_pid
      7: 0000000000000000    13 OBJECT  GLOBAL DEFAULT    5 LICENSE
 ```
