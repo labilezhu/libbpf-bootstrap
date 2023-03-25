@@ -12,7 +12,7 @@ Breakpoint on syscall:
 ```bash
 -exec catch syscall
 Catchpoint 3 (any syscall)
--exec condition 3 !$_any_caller_matches("get_kernel_version|kernel_supports|bpf_object__probe_loading|btf_parse_raw", 20)
+-exec condition 3 !$_any_caller_matches("get_kernel_version|kernel_supports|bpf_object__probe_loading|btf_parse_raw|handle_event", 20)
 ```
 
 ```bash
